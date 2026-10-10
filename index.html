@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="styles/global.css">
         <link rel="stylesheet" href="styles/header_footer.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/list.css">
 
         <!-- Javascript Files -->
         <script src="scripts/new_item.js" defer></script>
@@ -19,7 +20,31 @@
         <main>
             <!-- The main div for storing user list items -->
             <div id="list-box" class="flex-col">
+                <div class="list-item flex-col">
 
+                    <!-- Top of item box-->
+                    <div class="list-item-top-box flex-row">
+                        <div class="list-item-top-left-box flex full-center">
+                            <div class="list-item-number full-center flex">#</div>
+                        </div>
+
+                        <div class="list-item-top-right-box">
+                            <h1 class="list-item-name left-center-text">Name</h1>
+                        </div>
+                    </div>
+
+                    <!-- Bottom of item box -->
+                    <div class="list-item-bot-box flex-row">
+                        <div class="list-item-bot-left-box">
+
+                        </div>
+
+                        <div class="list-item-bot-right-box">
+                            <p class="list-item-desc">Desc</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <button id="add-new-item-button" onclick="AddNewItem()">
 

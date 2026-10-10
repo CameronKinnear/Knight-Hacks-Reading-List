@@ -1,3 +1,7 @@
+:root {
+    --left-item-width: 80px;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -8,6 +12,21 @@
     flex-direction: column;
 }
 
+.flex {
+    display: flex;
+}
+
 body {
     margin: 0px;
+}
+
+.full-center {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.left-center-text {
+    display: flex;
+    align-items: center;
 }

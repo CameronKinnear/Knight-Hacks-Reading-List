@@ -3,6 +3,7 @@
     height: 50px;
     border-radius: 100%;
     border: 2px solid black;
+    margin: 8px;
 }
 
 #add-new-item-button:hover {

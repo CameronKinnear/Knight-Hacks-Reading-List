@@ -1,3 +1,46 @@
 #list-box {
+    border: 2px solid black;
+    height: auto;
+    margin: 8px;
+    min-height: 100px;
+}
+
+.list-item {
+    padding: 5px;
+}
+
+.list-item-number {
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.list-item-name {
+    margin: 0px;
+    height: 100%;
+}
+
+
+.list-item-top-left-box {
+    width: var(--left-item-width);
+    height: auto;
     
 }
+
+.list-item-top-right-box {
+    display: inherit;
+}
+
+.list-item-bot-left-box {
+    width: var(--left-item-width);
+}
+
+.list-item-bot-right-box {
+    align-self: flex-start;
+}
+.list-item-desc {
+    margin: 0;
+}
+
