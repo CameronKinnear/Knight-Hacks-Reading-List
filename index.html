@@ -26,30 +26,27 @@
                     <!-- Top of item box-->
                     <div class="list-item-top-box flex-row">
                         <div class="list-item-top-left-box flex full-center">
-                            <button class="item-button list-item-number full-center flex" onclick="SelectItem(this)">#</button>
+                            <button class="item-button list-item-number full-center flex" onclick="ToggleEditing(this)">#</button>
                         </div>
 
-                        <div class="list-item-top-right-box">
-                            <h1 class="list-item-name left-center-text">Name</h1>
+                        <div class="list-item-top-right-box left-center-text">
+                            <h1 class="list-item-name " contenteditable="false">Name</h1>
                         </div>
                     </div>
 
                     <!-- Bottom of item box -->
                     <div class="list-item-bot-box flex-row">
-                        <div class="list-item-bot-left-box">
-
+                        <div class="list-item-bot-left-box full-center flex">
+                            <button class="new-item-button plus-icon" contenteditable="false" onclick="AddItem(this)"></button>
                         </div>
 
                         <div class="list-item-bot-right-box">
-                            <p class="list-item-desc">Desc</p>
+                            <p class="list-item-desc">Description goes here</p>
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
-            <button id="add-new-item-button" class="item-button" onclick="AddNewItem()">
-
-            </button>
         </main>
 
         <!-- Footer Div -->

@@ -30,3 +30,31 @@ body {
     display: flex;
     align-items: center;
 }
+
+.plus-icon {
+  width: 50px;
+  height: 50px;
+  
+  /* Creates the outer circular ring */
+  border: 4px solid #000;
+  border-radius: 50%;
+  box-sizing: border-box; /* Ensures border is counted within width/height */
+  
+  /* Horizontal and Vertical bar color */
+  background: 
+    linear-gradient(#000, #000), 
+    linear-gradient(#000, #000);
+    
+  background-position: center, center;
+  background-repeat: no-repeat;
+  
+  /* Reduces size to 65% width/height so it doesn't touch the edge */
+  /* Reduces thickness to 14% to make it thinner */
+  background-size: 65% 14%, 14% 65%; 
+}
+
+/* Style any contenteditable element */
+[contenteditable="true"] {
+    outline: 2px solid black;
+    background-color: rgb(184, 184, 184);
+}

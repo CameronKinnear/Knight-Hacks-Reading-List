@@ -13,3 +13,20 @@
 .item-button:active {
     background-color: rgb(187, 187, 187);
 }
+
+.new-item-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 2px solid black;
+    margin: 8px;
+}
+
+.new-item-button:hover {
+    background-color: gray;
+}
+
+.new-item-button:active {
+    background-color: rgb(187, 187, 187);
+}
+
