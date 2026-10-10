@@ -5,19 +5,22 @@ function AddItem(button) {
         Adds a new item to the list with default values
         :button - The button that was clicked, makes it invisible
     */
-    button.style.display = 'none';
+    button.classList.add('hidden');
     const newitem = CreateNewItem();
     list.appendChild(newitem);
-    RerenderNumbers();
+    Rerender();
 }
 
-async function RerenderNumbers() {
+async function Rerender() {
     /*
         Goes through the list and sets the numbers to the correct values after updates
     */
     const items = list.querySelectorAll('.list-item');
     items.forEach((item, i) => {
-        item.querySelector('.list-item-number').textContent = i + 1;
+        item.querySelector('.list-item-number').innerHTML = i + 1;
+        if (i == items.length - 1) {
+            item.querySelector('.new-item-button').classList.remove('hidden');
+        }
     });
 }
 
@@ -47,7 +50,7 @@ async function DeleteItem(listItem) {
 
     listItem.remove();
 
-    RerenderNumbers();
+    Rerender();
 }
 
 function ToggleEditing(listItem) {
@@ -68,6 +71,7 @@ function ToggleEditing(listItem) {
     let itemName = listItem.querySelector('.list-item-name');
     let itemDesc = listItem.querySelector('.list-item-desc');
     let deleteButton = listItem.querySelector('.delete-item-button');
+    let branchButton = listItem.querySelector('.branch-button');
 
     // Switch to editing mode
     if (listItem.dataset.mode == 'normal') {
@@ -137,7 +141,7 @@ const listItemTemplate = `
     <!-- Bottom of item box -->
     <div class="list-item-bot-box flex-row">
         <div class="list-item-bot-left-box full-center flex">
-            <button class="new-item-button plus-icon full-center flex" contenteditable="false" onclick="AddItem(this)">
+            <button class="new-item-button plus-icon full-center flex hidden" contenteditable="false" onclick="AddItem(this)">
             </button>
         </div>
 
@@ -148,3 +152,7 @@ const listItemTemplate = `
     
 </div>
 `;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    Rerender()
+});
