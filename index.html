@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="styles/list.css">
 
         <!-- Javascript Files -->
-        <script src="scripts/new_item.js" defer></script>
+        <script src="scripts/item.js" defer></script>
+        <script src="scripts/helper.js" defer></script>
     </head>
     <body>
         <!-- Header Div -->
@@ -20,12 +21,12 @@
         <main>
             <!-- The main div for storing user list items -->
             <div id="list-box" class="flex-col">
-                <div class="list-item flex-col">
+                <div class="list-item flex-col" data-mode="normal">
 
                     <!-- Top of item box-->
                     <div class="list-item-top-box flex-row">
                         <div class="list-item-top-left-box flex full-center">
-                            <div class="list-item-number full-center flex">#</div>
+                            <button class="item-button list-item-number full-center flex" onclick="SelectItem(this)">#</button>
                         </div>
 
                         <div class="list-item-top-right-box">
@@ -46,7 +47,7 @@
 
                 </div>
             </div>
-            <button id="add-new-item-button" onclick="AddNewItem()">
+            <button id="add-new-item-button" class="item-button" onclick="AddNewItem()">
 
             </button>
         </main>
