@@ -1,5 +1,4 @@
 const list = document.getElementById('list-box');
-let listLen = 1;
 
 function AddItem(button) {
     /*
@@ -12,16 +11,14 @@ function AddItem(button) {
     RerenderNumbers();
 }
 
-function RerenderNumbers() {
+async function RerenderNumbers() {
     /*
         Goes through the list and sets the numbers to the correct values after updates
     */
-    const listLen = ListLength();
-    listArray = list.querySelectorAll('.list-item');
-    for (let i = 0; i < listLen; i++) {
-        const listNumber = listArray[i].querySelector('.list-item-number');
-        listNumber.innerHTML = i + 1;
-    }
+    const items = list.querySelectorAll('.list-item');
+    items.forEach((item, i) => {
+        item.querySelector('.list-item-number').textContent = i + 1;
+    });
 }
 
 function ListLength() {
@@ -32,7 +29,7 @@ function ListLength() {
    return list.childElementCount;
 }
 
-function DeleteItem(listItem) {
+async function DeleteItem(listItem) {
     // If the provided element isnt correct find the closest correct one
     if (!listItem.classList.contains('list-item')) {
         listItem = GetListItem(listItem);
@@ -55,7 +52,7 @@ function DeleteItem(listItem) {
 
 function ToggleEditing(listItem) {
     /*
-        Selects the list item to edit or save
+        Toggles the editing on the list item
         :listItem - Any html element
     */
 
