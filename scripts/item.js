@@ -153,6 +153,36 @@ const listItemTemplate = `
 </div>
 `;
 
+const cardItemTemplate = `
+<div class="list-item flex-col" data-mode="normal">
+    
+    <!-- Top of item box-->
+    <div class="list-item-top-box flex-row">
+        <div class="list-item-top-left-box flex full-center">
+            <button class="item-button list-item-number full-center flex" onclick="ToggleEditing(this)">#</button>
+        </div>
+
+        <div class="list-item-top-right-box left-center-text">
+            <h1 class="list-item-name " contenteditable="false">Name</h1>
+            <button class="delete-item-button hidden" onclick="DeleteItem(this)">Delete Item</button>
+        </div>
+    </div>
+
+    <!-- Bottom of item box -->
+    <div class="list-item-bot-box flex-row">
+        <div class="list-item-bot-left-box full-center flex">
+            <button class="new-item-button plus-icon full-center flex hidden" contenteditable="false" onclick="AddItem(this)">
+            </button>
+        </div>
+
+        <div class="list-item-bot-right-box">
+            <p class="list-item-desc">Description goes here</p>
+        </div>
+    </div>
+    
+</div>
+`;
+
 document.addEventListener('DOMContentLoaded', (event) => {
     Rerender()
 });
