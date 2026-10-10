@@ -1,0 +1,12 @@
+#header-box {
+    position: sticky;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
+
+#footer-box {
+    width: 100%;
+    height: 100px;
+    background-color: gray;
+}
