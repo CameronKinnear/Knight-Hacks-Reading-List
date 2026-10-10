@@ -186,3 +186,35 @@ const cardItemTemplate = `
 document.addEventListener('DOMContentLoaded', (event) => {
     Rerender()
 });
+/*
+Adds one movie from the API to the existing list item design.
+:movie - Movie data with timeline_order, title, and overview
+:returns - The rendered list item element
+*/
+function AddNewItem(movie) {
+    const container = document.createElement('div');
+    container.innerHTML = listItemTemplate;
+    const movieItem = container.firstElementChild;
+    movieItem.querySelector('.list-item-number').textContent = movie.timeline_order;
+    movieItem.querySelector('.list-item-name').textContent = movie.title;
+    movieItem.querySelector('.list-item-desc').textContent = movie.overview || '';
+    list.appendChild(movieItem);
+    return movieItem;
+}
+
+/*
+Loads the timeline from the server and renders it using the existing item markup.
+:returns - Resolves after the list has been populated
+*/
+async function LoadMarvelMovies() {
+    const movies = await GetMarvelMovies();
+    if (movies.length === 0) {
+        ErrorLog('No Marvel movies were returned by the API');
+        return;
+    }
+    list.innerHTML = '';
+    movies.forEach((movie) => AddNewItem(movie));
+    Rerender();
+}
+
+document.addEventListener('DOMContentLoaded', LoadMarvelMovies);
