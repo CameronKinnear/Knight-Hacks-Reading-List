@@ -1,0 +1,16 @@
+meta {
+  name: Update Watchlist entry
+  type: http
+  seq: 7
+}
+patch {
+  url: {{baseUrl}}/api/watchlist/{{entryId}}
+  body: json
+  auth: none
+}
+body:json {
+  {
+    "status": "watching",
+    "note": "Continue tonight"
+  }
+}

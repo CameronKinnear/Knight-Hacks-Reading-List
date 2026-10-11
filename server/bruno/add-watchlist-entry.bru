@@ -1,0 +1,20 @@
+meta {
+  name: Add to Watchlist
+  type: http
+  seq: 5
+}
+post {
+  url: {{baseUrl}}/api/watchlist
+  body: json
+  auth: none
+}
+body:json {
+  {
+    "movieId": 1771,
+    "status": "planned",
+    "note": "Start here"
+  }
+}
+script:post-response {
+  bru.setVar("entryId", res.body.id)
+}

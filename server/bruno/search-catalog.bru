@@ -1,0 +1,10 @@
+meta {
+  name: Search catalog
+  type: http
+  seq: 4
+}
+get {
+  url: {{baseUrl}}/api/movies?search=Captain&order=timeline
+  body: none
+  auth: none
+}
