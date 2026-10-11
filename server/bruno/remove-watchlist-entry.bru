@@ -1,0 +1,10 @@
+meta {
+  name: Remove Watchlist entry
+  type: http
+  seq: 8
+}
+delete {
+  url: {{baseUrl}}/api/watchlist/{{entryId}}
+  body: none
+  auth: none
+}

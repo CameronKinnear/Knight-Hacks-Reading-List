@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: knight-hacks-marvel-timeline
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: Knighthacksmarvel
